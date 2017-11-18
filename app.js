@@ -18,7 +18,10 @@ var express =     require("express"),
   campgroundRoutes=require("./routes/campgrounds"),
     indexRoutes    =require("./routes/index")
    
-   mongoose.connect("mongodb://localhost/yelp_camp_v6")
+   
+   //mongoose.connect("mongodb://localhost/yelp_camp_v6")
+   mongoose.connect("mongodb://Aditya:kumarsingh1234@ds137801.mlab.com:37801/yelpcamp")
+   //mongodb://Aditya:kumarsingh1234@ds137801.mlab.com:37801/yelpcamp
    
    app.use(bodyparser.urlencoded({extended:true}))
    
