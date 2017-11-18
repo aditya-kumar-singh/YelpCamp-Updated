@@ -17,11 +17,17 @@ var express =     require("express"),
  var commentRoutes=require("./routes/comments"),
   campgroundRoutes=require("./routes/campgrounds"),
     indexRoutes    =require("./routes/index")
+    
+    console.log(process.env.DATABASEURL)
    
    
-   //mongoose.connect("mongodb://localhost/yelp_camp_v6")
-   mongoose.connect("mongodb://Aditya:kumarsingh1234@ds137801.mlab.com:37801/yelpcamp")
+  // mongoose.connect("mongodb://localhost/yelp_camp_v6")/////First way for temporary
+   //mongoose.connect("mongodb://Aditya:kumarsingh1234@ds137801.mlab.com:37801/yelpcamp")
    //mongodb://Aditya:kumarsingh1234@ds137801.mlab.com:37801/yelpcamp
+   
+   var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v6"; //for permanent//
+             mongoose.connect(url);
+
    
    app.use(bodyparser.urlencoded({extended:true}))
    
